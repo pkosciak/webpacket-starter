@@ -16,7 +16,7 @@ abstract class BaseBlock implements BlockInterface
 
     public function __construct(protected View $view)
     {
-        $this->name = strtolower((new \ReflectionClass(static::class))->getShortName());
+        $this->name = (new \ReflectionClass(static::class))->getShortName();
         add_action('init', [$this, 'initBlock']);
     }
 

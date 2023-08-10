@@ -27,8 +27,10 @@ return [
             'ExampleCpt',
         ],
         'Blocks' => [
+            'ExampleHeroSection'
         ],
         'Layouts' => [
+            'ExampleHeaderLayout'
         ],
     ],
     'EXTENSIONS' => [],

@@ -15,7 +15,7 @@ abstract class BaseLayout implements LayoutInterface {
 
     public function __construct(protected View $view)
     {
-        $this->name = strtolower((new \ReflectionClass(static::class))->getShortName());
+        $this->name = (new \ReflectionClass(static::class))->getShortName();
     }
 
     public function renderFront(): void
@@ -23,7 +23,7 @@ abstract class BaseLayout implements LayoutInterface {
         $data = ['layout' => $this->name];
         $data = apply_filters('filter_'.$this->name.'_data', $data);
         $this->view->setData($data);
-        $this->view->render('modules.layout.'.$this->name.'.'.$this->name);
+        $this->view->render('modules.layouts.'.$this->name.'.'.$this->name);
     }
 
 }

@@ -1,5 +1,5 @@
 @import 'core/components/buttons.css';
-@import 'layouts/HeaderLayout1/HeaderLayout1.css';
+@import 'blocks/ExampleHeroSection/ExampleHeroSection.pcss';
 
 @tailwind base;
 @tailwind components;

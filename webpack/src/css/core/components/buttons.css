@@ -1,0 +1,9 @@
+.btn {
+    @apply tw-text-base tw-font-medium tw-rounded-lg tw-p-3;
+    &--secondary {
+        @apply tw-bg-slate-100 tw-text-slate-900;
+    }
+    &--primary {
+        @apply tw-bg-red-500 tw-text-white;
+    }
+}

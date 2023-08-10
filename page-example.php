@@ -1,0 +1,1 @@
+<?php /* See app/templates/core/page-example.blade.php */

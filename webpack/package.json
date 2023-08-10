@@ -1,0 +1,50 @@
+{
+    "name": "iucn",
+    "scripts": {
+        "dev": "webpack --config webpack.dev.js",
+        "watch": "webpack --config webpack.dev.js --watch",
+        "prod": "webpack --config webpack.prod.js",
+        "lint": "eslint"
+    },
+    "dependencies": {
+        "@babel/core": "^7.17.10",
+        "@headlessui/tailwindcss": "^0.2.0",
+        "@headlessui/vue": "^1.7.15",
+        "@heroicons/vue": "^2.0.18",
+        "axios": "^0.27.2",
+        "file-loader": "^6.2.0",
+        "lodash": "^4.17.21",
+        "mitt": "^3.0.0",
+        "pinia": "^2.0.17",
+        "ts-loader": "^9.4.4",
+        "typescript": "^5.1.6",
+        "url-loader": "^4.1.1",
+        "vee-validate": "^4.7.3",
+        "vue": "^3.2.33",
+        "vue-router": "^4.0.15",
+        "vue-tippy": "^6.0.0"
+    },
+    "devDependencies": {
+        "@babel/preset-env": "^7.17.10",
+        "@tailwindcss/forms": "^0.5.3",
+        "@types/lodash": "^4.14.196",
+        "autoprefixer": "^10.2.5",
+        "babel-loader": "^8.2.5",
+        "babel-preset-env": "^1.7.0",
+        "css-loader": "^6.7.1",
+        "css-minimizer-webpack-plugin": "^3.4.1",
+        "eslint": "^8.46.0",
+        "eslint-plugin-vue": "^9.16.0",
+        "mini-css-extract-plugin": "^2.6.0",
+        "postcss": "^8.4.24",
+        "postcss-import": "^15.1.0",
+        "postcss-loader": "^5.2.0",
+        "style-loader": "^3.3.1",
+        "tailwindcss": "^3.3.2",
+        "terser-webpack-plugin": "^5.3.1",
+        "vue-loader": "^17.0.0",
+        "webpack": "^5.72.0",
+        "webpack-cli": "^4.9.2",
+        "webpack-merge": "^5.8.0"
+    }
+}

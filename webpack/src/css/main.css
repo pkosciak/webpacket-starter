@@ -1,0 +1,6 @@
+@import 'core/components/buttons.css';
+@import 'layouts/HeaderLayout1/HeaderLayout1.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

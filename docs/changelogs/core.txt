@@ -1,0 +1,6 @@
+Branch: master
+
+Version: 1.0.0
+
+[date]
+- some changes

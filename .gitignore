@@ -1,0 +1,9 @@
+/vendor/
+/assets/js
+/assets/css
+.env
+/app/cache/
+.phpcs.xml.dist
+.phpunit.result.cache
+.travis.yml
+/webpack/node_modules

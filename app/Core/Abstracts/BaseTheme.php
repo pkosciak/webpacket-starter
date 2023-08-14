@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Core\Abstracts;
 
 use App\Core\AjaxRouter;
-use App\Core\Cli;
+use App\Core\Console;
 use App\Core\DuplicateFunctionalityException;
 use App\Core\Interfaces\ThemeInterface;
 use App\Core\View;
@@ -49,7 +49,7 @@ abstract class BaseTheme implements ThemeInterface
         $this::$ajaxRouterInstance = new AjaxRouter();
         $this::$restRouterInstance = new RestRouter();
 
-        new Cli();
+        new Console();
 
         $this->checkDependencies();
         $this->checkAjaxDependencies();

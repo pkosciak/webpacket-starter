@@ -6,7 +6,7 @@ namespace App\Core;
 
 use App\Helpers\Config;
 
-class Cli
+class Console
 {
 
     public function __construct()
@@ -21,12 +21,12 @@ class Cli
      */
     public function registerNamespaces(): void
     {
-        $namespacesList = Config::get('COMMANDS');
+        $namespacesList = Config::get('CONSOLE');
 
         if (empty($namespacesList)) return;
 
         foreach ($namespacesList as $namespaceName) {
-            $fullNamespaceName = 'App\Commands\\' . $namespaceName;
+            $fullNamespaceName = 'App\Console\\' . $namespaceName;
             if(class_exists('WP_CLI')){
                 new $fullNamespaceName();
             }

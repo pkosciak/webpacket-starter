@@ -24,6 +24,8 @@ final class TemplateRouter
             $controllerName = 'Core\PageController';
         } else if (is_front_page()) {
             $controllerName = 'Core\FrontController';
+        } else if (is_home()) {
+            $controllerName = 'Core\HomeController';
         } else if (is_archive() || is_category()) {
             $controllerName = 'Core\ArchiveController';
         } else if (is_search()) {

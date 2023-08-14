@@ -9,7 +9,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 module.exports = merge(common, {
 	mode: 'production',
 	output: {
-		path: path.resolve(__dirname, '../assets'),
+		path: path.resolve(__dirname, '../public'),
 		filename: 'js/[name].min.js?[chunkhash]',
 		assetModuleFilename: '[name][ext][query]'
 	},

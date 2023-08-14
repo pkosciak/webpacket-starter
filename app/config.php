@@ -14,6 +14,7 @@ return [
         'Core\ArchiveController',
         'Core\ErrorController',
         'Core\FrontController',
+        'Core\HomeController',
         'Core\PageController',
         'Core\SearchController',
         'Core\SingleController',
@@ -42,7 +43,7 @@ return [
             'SearchApi'
         ],
     ],
-    'COMMANDS' => [
+    'CONSOLE' => [
         'Core\Starter'
     ],
 ];

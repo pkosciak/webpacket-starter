@@ -6,7 +6,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = merge(common, {
 	mode: 'development',
 	output: {
-		path: path.resolve(__dirname, '../assets'),
+		path: path.resolve(__dirname, '../public'),
 		filename: 'js/[name].js?[chunkhash]',
 		assetModuleFilename: '[name][ext][query]'
 	},

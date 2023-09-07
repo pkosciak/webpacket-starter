@@ -6,8 +6,8 @@
  */
 
 namespace Unit;
-use Webpacket\Core\View;
-use Webpacket\Exceptions\Core\ViewNotFoundException;
+use App\Core\View;
+use App\Exceptions\Core\ViewNotFoundException;
 use WP_UnitTestCase;
 
 class ViewTest extends WP_UnitTestCase

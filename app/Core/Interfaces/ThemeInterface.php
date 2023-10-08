@@ -7,7 +7,7 @@ namespace App\Core\Interfaces;
 interface ThemeInterface
 {
 
-    public function __construct();
+    public function init(): void;
 
     public function registerAssetsAction();
 

@@ -7,6 +7,7 @@ namespace App\Core\Abstracts;
 use App\Core\Interfaces\LayoutInterface;
 use App\Core\Traits\Modular;
 use App\Core\View;
+use App\Exceptions\Core\ViewNotFoundException;
 
 abstract class BaseLayout implements LayoutInterface {
     use Modular;
@@ -14,8 +15,12 @@ abstract class BaseLayout implements LayoutInterface {
     public function __construct(protected View $view)
     {
         $this->setupModule();
+        $this->init();
     }
 
+    /**
+     * @throws ViewNotFoundException
+     */
     public function renderFront(): void
     {
         $data = ['layout' => $this->name];

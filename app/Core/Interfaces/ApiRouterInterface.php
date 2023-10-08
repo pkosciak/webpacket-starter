@@ -8,6 +8,7 @@ use App\Core\Abstracts\BaseApiRouter;
 
 interface ApiRouterInterface
 {
+
     public function allInstances(): array;
 
     public function instance($apiName): BaseApiRouter|false;

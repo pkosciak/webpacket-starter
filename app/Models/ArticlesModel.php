@@ -12,6 +12,10 @@ class ArticlesModel extends BaseModel
     {
         parent::__construct();
     }
+
+    /**
+     * @throws \Exception
+     */
     public function getArticles(int $page = 1, string $query = ''): array
     {
         $args = [

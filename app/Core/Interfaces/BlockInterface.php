@@ -8,8 +8,6 @@ interface BlockInterface
 {
     public function register() : array;
 
-    public function initBlock(): void;
-
     public function renderFront($block, $content = '', $is_preview = false, $post_id = 0): void;
 
 }

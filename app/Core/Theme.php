@@ -8,13 +8,11 @@ use App\Core\Abstracts\BaseTheme;
 
 class Theme extends BaseTheme
 {
-    public function __construct()
+    public function init(): void
     {
         $theme_data = wp_get_theme();
         define('THEME_TEXTDOMAIN', $theme_data->get('TextDomain'));
         define('THEME_NAME', $theme_data->get('Name'));
-
-        parent::__construct();
     }
 
     public function registerAdminAssetsAction(): void

@@ -9,19 +9,21 @@ use App\Exceptions\Core\ViewNotFoundException;
 
 final class View
 {
-    private $data = [];
-    private $blade;
+    private array $data = [];
+    private Blade $blade;
 
     public function __construct()
     {
         $this->blade = new Blade(TEMPLATES_PATH, CACHE_PATH);
     }
 
-    public function setData($data) {
+    public function setData($data): void
+    {
         $this->data = $data;
     }
 
-    public function render(string $template) {
+    public function render(string $template): void
+    {
         try {
             $html = $this->blade->make($template, $this->data)->render();
             echo $html;

@@ -16,6 +16,7 @@ abstract class BaseBlock implements BlockInterface
     {
         $this->setupModule();
         add_action('init', [$this, 'initBlock']);
+        $this->init();
     }
 
     public function initBlock(): void

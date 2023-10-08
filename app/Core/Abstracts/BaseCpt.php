@@ -14,12 +14,12 @@ abstract class BaseCpt implements CptInterface
 
     protected static string $postTypeName = '';
 
-    public function __construct()
+    public function init(): void
     {
         $this->setupModule();
         if(!static::$postTypeName) throw new CptException('No post type name specified');
-        add_action('init', [$this, 'initPostType']);
+        add_action('init', [$this, 'registerCustomPostType']);
     }
 
-    public function initPostType(): void {}
+    public function registerCustomPostType(): void {}
 }

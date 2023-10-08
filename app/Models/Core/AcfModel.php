@@ -8,9 +8,8 @@ use App\Core\Abstracts\BaseModel;
 
 class AcfModel extends BaseModel
 {
-    public function __construct()
+    public function init(): void
     {
-        parent::__construct();
         add_filter('acf/settings/save_json', array($this, 'setAcfJsonSavePoint'));
         add_filter('acf/settings/load_json', array($this, 'setAcfJsonLoadPoint'));
     }

@@ -6,16 +6,13 @@ namespace App\Modules\Blocks\ExampleHeroSection;
 
 use App\Core\Abstracts\BaseBlock;
 
-use App\Core\View;
-
 /**
  * See app/templates/modules/blocks/exampleherosection/exampleherosection.blade.php
  */
 class ExampleHeroSection extends BaseBlock
 {
-    public function __construct(protected View $view)
+    public function init(): void
     {
-        parent::__construct($this->view);
         add_filter('filter_'.$this->name.'_data', [$this, 'prepareData'],10 ,1);
     }
 

@@ -34,6 +34,7 @@ abstract class BaseTheme implements ThemeInterface
 
     public function __construct()
     {
+        $this->init();
         $this->view = new View();
         add_action('wp_enqueue_scripts', [$this, 'registerAssetsAction']);
         add_action('admin_enqueue_scripts', [$this, 'registerAdminAssetsAction']);

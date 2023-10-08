@@ -11,7 +11,7 @@ class ExampleCpt extends BaseCpt
 
     protected static string $postTypeName = 'example';
 
-    public function initPostType(): void
+    public function registerCustomPostType(): void
     {
         $labels = [
             'name'               => _x('Name', 'post type general name', THEME_TEXTDOMAIN),

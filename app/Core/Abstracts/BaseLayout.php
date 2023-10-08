@@ -11,11 +11,9 @@ use App\Core\View;
 abstract class BaseLayout implements LayoutInterface {
     use Modular;
 
-    protected string $name;
-
     public function __construct(protected View $view)
     {
-        $this->name = (new \ReflectionClass(static::class))->getShortName();
+        $this->setupModule();
     }
 
     public function renderFront(): void

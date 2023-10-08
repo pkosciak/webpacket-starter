@@ -12,11 +12,9 @@ abstract class BaseBlock implements BlockInterface
 {
     use Modular;
 
-    protected string $name;
-
     public function __construct(protected View $view)
     {
-        $this->name = (new \ReflectionClass(static::class))->getShortName();
+        $this->setupModule();
         add_action('init', [$this, 'initBlock']);
     }
 

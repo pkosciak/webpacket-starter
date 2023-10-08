@@ -15,6 +15,7 @@ abstract class BaseModel
     public function __construct()
     {
         global $wpdb;
+        $this->setupModule();
         $this->wpdb = $wpdb;
     }
 

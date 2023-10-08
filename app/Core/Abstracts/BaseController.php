@@ -8,7 +8,7 @@ use App\Core\Interfaces\ControllerInterface;
 use App\Core\Traits\Modular;
 use App\Core\View;
 
-abstract class BaseController implements ControllerInterface
+abstract class BaseController
 {
     use Modular;
 
@@ -16,6 +16,7 @@ abstract class BaseController implements ControllerInterface
 
     public function __construct(protected View $view)
     {
+        $this->setupModule();
         $this->controller = static::class;
     }
 }

@@ -8,5 +8,7 @@ use App\Core\Traits\Modular;
 
 abstract class BaseAjaxApi {
     use Modular;
-    public function __construct(){}
+    public function __construct(){
+        $this->setupModule();
+    }
 }

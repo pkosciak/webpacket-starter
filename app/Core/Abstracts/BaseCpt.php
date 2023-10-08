@@ -12,12 +12,11 @@ abstract class BaseCpt implements CptInterface
 {
     use Modular;
 
-    public array $dependencies = [];
-
     protected static string $postTypeName = '';
 
     public function __construct()
     {
+        $this->setupModule();
         if(!static::$postTypeName) throw new CptException('No post type name specified');
         add_action('init', [$this, 'initPostType']);
     }

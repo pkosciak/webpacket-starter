@@ -16,6 +16,7 @@ abstract class BaseApiRouter implements ApiRouterInterface
 
     public function __construct()
     {
+        $this->setupModule();
         $this->registerRoutes();
     }
 

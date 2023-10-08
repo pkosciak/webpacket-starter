@@ -127,11 +127,27 @@ abstract class BaseTheme implements ThemeInterface
 
     private function checkDependencies(): void
     {
-        foreach(self::$loadedObjects as $loaded){
+        $this->handleDependenciesCheck(self::$loadedObjects);
+    }
+
+    private function handleDependenciesCheck($container): void
+    {
+        foreach($container as $loaded){
             $className = (new \ReflectionClass($loaded))->getShortName();
-            foreach($loaded->dependencies as $dependency){
-                if(!in_array($dependency, self::$loaded)){
-                    throw new MissingDependencyException('Missing "' . $dependency . '" dependency for "' . $className . '" module');
+            foreach($loaded->dependencies as $dependencyType => $dependency){
+                switch($dependencyType){
+                    case 'plugins':
+                        foreach($dependency as $pluginName => $pluginFile){
+                            if(!is_plugin_active($pluginFile)){
+                                throw new MissingDependencyException('Missing "' . $pluginName . '" dependency for "' . $className . '" module');
+                            }
+                        }
+                        break;
+                    default:
+                        if(!in_array($dependency, self::$loaded)){
+                            throw new MissingDependencyException('Missing "' . $dependency . '" dependency for "' . $className . '" module');
+                        }
+                        break;
                 }
             }
         }
@@ -139,26 +155,12 @@ abstract class BaseTheme implements ThemeInterface
 
     private function checkAjaxDependencies(): void
     {
-        foreach($this::$ajaxRouterInstance->allInstances() as $loaded){
-            $className = (new \ReflectionClass($loaded))->getName();
-            foreach($loaded->dependencies as $dependency){
-                if(!in_array($dependency, self::$loaded)){
-                    throw new MissingDependencyException('Missing "' . $dependency . '" dependency for "' . $className . '" module');
-                }
-            }
-        }
+        $this->handleDependenciesCheck($this::$ajaxRouterInstance->allInstances());
     }
 
     private function checkRestDependencies(): void
     {
-        foreach($this::$restRouterInstance->allInstances() as $loaded){
-            $className = (new \ReflectionClass($loaded))->getName();
-            foreach($loaded->dependencies as $dependency){
-                if(!in_array($dependency, self::$loaded)){
-                    throw new MissingDependencyException('Missing "' . $dependency . '" dependency for "' . $className . '" module');
-                }
-            }
-        }
+        $this->handleDependenciesCheck($this::$restRouterInstance->allInstances());
     }
 
     public static function getLoadedObjects()

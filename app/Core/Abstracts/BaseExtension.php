@@ -6,9 +6,12 @@ namespace App\Core\Abstracts;
 
 use App\Core\Traits\Modular;
 
-abstract class BaseRestApi {
+abstract class BaseExtension
+{
     use Modular;
-    public function __construct(){
+
+    public function __construct()
+    {
         $this->setupModule();
     }
 }

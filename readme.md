@@ -46,4 +46,4 @@ php vendor/bin/phpunit
 ```
 
 ### Modules
-[ACF Menu Depth Extension](https://github.com/pkosciak/webpacket-starter/tree/extensions/acf-menu-depth-extension)
+[ACF Menu Depth Extension](https://github.com/pkosciak/webpacket-acf-menu-depth-extension)

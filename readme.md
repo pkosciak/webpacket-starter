@@ -1,4 +1,4 @@
-# webpacket-starter WordPress Theme
+# webpacket-starter wordpress theme
 ## Requirements
 ```
 php 8.1 or above
@@ -44,6 +44,3 @@ bash bin/install-wp-tests.sh DATABASE_NAME root root DATABASE_DOCKER_CONTAINER_N
 ```bash
 php vendor/bin/phpunit
 ```
-
-### Modules
-[ACF Menu Depth Extension](https://github.com/pkosciak/webpacket-acf-menu-depth-extension)
